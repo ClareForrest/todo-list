@@ -11,17 +11,10 @@ class TodosController < ApplicationController
   def index
   end
 
-<<<<<<< HEAD
   def new
   end
 
   def create
   end
-  
-=======
-  def home 
-  end 
-  
 
->>>>>>> 1ccf5f32d8b503f3afd417f2675c75cf5c0af61f
 end
