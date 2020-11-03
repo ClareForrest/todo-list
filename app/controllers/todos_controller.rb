@@ -5,6 +5,6 @@ class TodosController < ApplicationController
   def restricted
   end
 
-  def home
+  def index
   end
 end
