@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   # get 'todos/home'
   root to: 'todos#home'
   devise_for :users
+  resources :todos
 end
