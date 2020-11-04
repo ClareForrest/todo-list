@@ -1,8 +1,9 @@
+<div class="show-container">
+  <div class="todo">
 <%= form_with model: @todo, local: true do |f| %>
-  <%= f.label :task %>
-  <%= f.text_area :title %>
-  <%= f.label :description %>
-  <%= f.text_area :body %>
+  <p>Title: <%= f.text_area :title %></p>
+  <p>Description: <%= f.text_area :body %> </p>
   <p>Completed <%= f.check_box :completed, {}, true, false %></p>
-  <%= f.submit %>
 <% end %>
+</div>
+</div>
