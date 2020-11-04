@@ -1,45 +1,63 @@
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid pink;
+  width: 100px;
+  height: 30px;
+  padding: 10px;
+  margin-top: 10px;
+}
+// styling for the hover effect on buttons
+@mixin hoverbutton {
+  background-color: lightslategrey;
+  color: deeppink;
+  text-decoration: none;
+}
+// styling for the link-text on buttons throughout application
+@mixin link-text {
+    text-decoration: none;
+    font-size: 16px; 
+    color: lightpink;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+// Homepage buttons (sign-in and sign-up)
 .button-container {
   display: flex; 
   align-items: center;
   justify-content: center;
 }
 
-@mixin button {
-  display: flex;
-  justify-content: center;
-  border: 2px solid pink;
-  width: 100px;
-  padding: 10px;
+.homebuttons {
+  @include button;
+  &:hover { 
+    @include hoverbutton;
+    }
 }
 
-.login-button {
-  @include button;
+.homebuttons a { 
+    @include link-text;
+  }
+
+  .viewtodo {
+    @include button; 
+    &:hover {
+    @include hoverbutton;
+    }
+  }
+
+  .viewtodo a {
+    @include link-text;
+  }
+
+  .showbutton {
+    @include button;
+    &:hover {
+      @include hoverbutton; 
+  }
 }
-
-.signin-button {
-  @include button;
-  } 
-
-  @mixin link-button {
-    text-decoration: none;
-    font-size: 16px; 
-
-  }
-  .signin-button a { 
-    @include link-button
-  }
-  
-  .login-button a {
-    @include link-button
+  .showbutton a {
+    @include link-text; 
   }
 
-  .signin-button a:hover { 
-    text-decoration: none;
-    
-
-  }
-
-.login-button a:hover {
-  text-decoration: none;
-
-  }

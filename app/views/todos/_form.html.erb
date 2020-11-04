@@ -1,9 +1,8 @@
 <%= form_with model: @todo, local: true do |f| %>
-  <%= f.label :title %>
+  <%= f.label :task %>
   <%= f.text_area :title %>
-  <%= f.label :body %>
+  <%= f.label :description %>
   <%= f.text_area :body %>
-  <%= f.label :completed %>
-  <%= f.text_area :completed %>
+  <p>Completed <%= f.check_box :completed, {}, true, false %></p>
   <%= f.submit %>
 <% end %>
