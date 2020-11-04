@@ -1,9 +1,12 @@
 @mixin button {
   display: flex;
   justify-content: center;
+  align-items: center;
   border: 2px solid pink;
   width: 100px;
+  height: 30px;
   padding: 10px;
+  margin-top: 10px;
 }
 // styling for the hover effect on buttons
 @mixin hoverbutton {
@@ -17,6 +20,7 @@
     font-size: 16px; 
     color: lightpink;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
   }
 // Homepage buttons (sign-in and sign-up)
 .button-container {
@@ -28,12 +32,12 @@
 .homebuttons {
   @include button;
   &:hover { 
-    @include hoverbutton
+    @include hoverbutton;
     }
 }
 
 .homebuttons a { 
-    @include link-text
+    @include link-text;
   }
 
   .viewtodo {
@@ -48,7 +52,7 @@
   }
 
   .showbutton {
-    @include button
+    @include button;
     &:hover {
       @include hoverbutton; 
   }
