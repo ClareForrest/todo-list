@@ -1,0 +1,9 @@
+<%= form_with model: @todo, local: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.label :completed %>
+  <%= f.text_area :completed %>
+  <%= f.submit %>
+<% end %>
