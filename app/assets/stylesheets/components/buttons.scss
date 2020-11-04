@@ -4,16 +4,20 @@
   justify-content: center;
 }
 
-.login-button {
+@mixin button {
+  display: flex;
+  justify-content: center;
   border: 2px solid pink;
   width: 100px;
   padding: 10px;
 }
 
-  .signin-button {
-  border: 2px solid pink;
-  width: 100px;
-  padding: 10px;
+.login-button {
+  @include button;
+}
+
+.signin-button {
+  @include button;
   } 
 
   .signin-button a { 
