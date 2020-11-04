@@ -32,4 +32,16 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
   end
 
+ 
+
+
+
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+  end
 end
