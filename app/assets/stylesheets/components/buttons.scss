@@ -20,26 +20,36 @@
   @include button;
   } 
 
-  @mixin link-button {
+@mixin link-text {
     text-decoration: none;
     font-size: 16px; 
+    color: lightpink;
 
   }
   .signin-button a { 
-    @include link-button
+    @include link-text
   }
   
   .login-button a {
-    @include link-button
+    @include link-text
   }
 
-  .signin-button a:hover { 
+  @mixin hoverbutton {
+    background-color: lightslategrey;
+    color: deeppink;
     text-decoration: none;
-    
-
   }
 
-.login-button a:hover {
-  text-decoration: none;
-
+  .signin-button:hover { 
+    @include hoverbutton
   }
+
+.login-button:hover {
+  @include hoverbutton
+  }
+
+// .submit {
+//   @include link-text
+//   @include button 
+//   text-align: center;
+// }
