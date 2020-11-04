@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[show]
+  before_action :set_todo, only: %i[show destroy update]
   before_action :authenticate_user! 
   # this is to ensure that only a user can see this stuff 
 
@@ -26,17 +26,7 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
-  private
-
-  def set_todo
-    @todo = Todo.find(params[:id])
-  end
-
- 
-
-
-
-  def edit
+  def update #edit
     @todo = Todo.find(params[:id])
   end
 
@@ -44,4 +34,12 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     @todo.destroy
   end
+
+  private
+
+  def set_todo
+    @todo = Todo.find(params[:id])
+  end
+
+
 end
