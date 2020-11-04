@@ -20,16 +20,17 @@
   @include button;
   } 
 
-  .signin-button a { 
+  @mixin link-button {
     text-decoration: none;
     font-size: 16px; 
 
   }
-
-.login-button a {
-  text-decoration: none;
-  font-size: 16px; 
-
+  .signin-button a { 
+    @include link-button
+  }
+  
+  .login-button a {
+    @include link-button
   }
 
   .signin-button a:hover { 
