@@ -24,8 +24,9 @@
     text-decoration: none;
     font-size: 16px; 
     color: lightpink;
-
+    font-family: Arial, Helvetica, sans-serif;
   }
+  
   .signin-button a { 
     @include link-text
   }
@@ -48,8 +49,14 @@
   @include hoverbutton
   }
 
-// .submit {
-//   @include link-text
-//   @include button 
-//   text-align: center;
-// }
+  .viewtodo {
+    @include button
+  }
+
+  .viewtodo a {
+    @include link-text()
+  }
+
+  .viewtodo:hover {
+    @include hoverbutton
+  }

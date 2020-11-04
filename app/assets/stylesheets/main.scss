@@ -1,7 +1,10 @@
 //global
 @import "global/fonts";
+@import "global/body";
 
 // components 
 @import "components/navbar";
 @import "components/deviseform";
-@import "components/buttons"
+@import "components/buttons";
+@import "components/home";
+@import "components/todos";

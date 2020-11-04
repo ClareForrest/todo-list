@@ -1,7 +1,7 @@
 <nav class="dropdown"> 
     <button class="dropbtn">Menu</button>
     <div class="dropdown-content">
-  <%= link_to "Home", root_path %>
+  <%= link_to "Home", todos_path %>
   <%= link_to "New Todo", new_todo_path %>
   <%= link_to "See All Todos", todos_path %>
   <%= link_to "Sign Out", destroy_user_session_path, method: "delete" %>
