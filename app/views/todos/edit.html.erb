@@ -1,14 +1,19 @@
+<%= render "shared/loginnavbar" %>
 <h1>Editing post</h1>
- 
-<%= form_with model: @todo, local: true do |f| %>
-  <%= f.label :title %>
-  <%= f.text_area :title %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-  <%= f.label :completed %>
-  <%= f.text_area :completed %>
-  <%= f.submit %>
-<% end %>
- 
-<%= link_to 'Show', todo_path %>
-<%= link_to 'Back', todos_path %>
+
+<div class="show-container">
+  <div class="todo">
+  <%= form_with model: @todo, local: true do |f| %>
+    <p>Title: <%= f.text_area :title %> </p>
+    <p>Description: <%= f.text_area :body %> </p>
+    <p>Completed <%= f.check_box :completed, {}, true, false %></p>
+  <% end %>
+  </div>
+</div>
+
+<div class="showbutton">
+  <%= link_to 'Show', todo_path %>
+</div>
+<div class="showbutton">
+  <%= link_to 'Back', todos_path %>
+</div>
