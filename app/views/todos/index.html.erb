@@ -1,1 +1,8 @@
-<h1> Todo List </h1>
+<h1> Todo List! </h1>
+<% @todos.each do |todo| %>
+    <%= link_to todo_path(todo.id), class: "todo" do %>
+      <p>Task: <%= todo.title %></p>
+      <p>Description: <%= todo.body %></p>
+      <p>Completed: <%= todo.completed %></p>
+    <% end %>
+  <% end %>
