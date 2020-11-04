@@ -1,18 +1,16 @@
 <%= render "shared/navbar" %>
 <h1> Todo List! </h1>
 <% @todos.each do |todo| %>
-    <%= link_to todo_path(todo.id), class: "todo" do %>
-      <p>Task: <%= todo.title %></p>
-      <p>Description: <%= todo.body %></p>
-      <p>Completed: <%= todo.completed %></p>
-    <% end %>
+    <p>Task: <%= todo.title %></p>
+    <p>Description: <%= todo.body %></p>
+    <p>Completed: <%= todo.completed %></p>
+    <%= link_to "View Todo", todo_path(todo.id) %>
   <% end %> 
   <div>
-  <%= link_to "View Todo", todo_path %>
   </div>
   <div>
-  <%= link_to "New Todo", todo_path(@todo.id) %>
+  <%= link_to "New Todo", new_todo_path%>
   </div>
-    <div>
+  <div>
   <%= link_to "View All Todos", todos_path %>
   </div>

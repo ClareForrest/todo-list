@@ -21,7 +21,8 @@ class TodosController < ApplicationController
   end
 
   def create
-    Todo.create(id: params[:id], title: params[:title], body: params[:body], completed: params[:completed])
+    todo = current_user.todos.new(title: params[:todo][:title], body: params[:todo][:body], completed: params[:todo][:completed])
+    todo.save 
     redirect_to todos_path
   end
 
