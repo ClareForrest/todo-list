@@ -26,13 +26,13 @@ class TodosController < ApplicationController
     redirect_to todos_path
   end
 
-  def update #edit
-    @todo = Todo.find(params[:id])
+  def edit
   end
 
   def destroy
-    @todo = Todo.find(params[:id])
     @todo.destroy
+    #need a flash message in here or something
+    redirect_to todos_path
   end
 
   private
