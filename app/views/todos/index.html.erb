@@ -1,23 +1,19 @@
 <h1> Index page </h1>
 
+<%= render "shared/navbar" %>
+<h1> Todo List! </h1>
+<% @todos.each do |todo| %>
+    <p>Task: <%= todo.title %></p>
+    <p>Description: <%= todo.body %></p>
+    <p>Completed: <%= todo.completed %></p>
+    <%= link_to "View Todo", todo_path(todo.id) %>
+  <% end %> 
+  <div>
+  </div>
+  <div>
+  <%= link_to "New Todo", new_todo_path%>
+  </div>
+  <div>
+  <%= link_to "View All Todos", todos_path %>
+  </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<%= @todos%>

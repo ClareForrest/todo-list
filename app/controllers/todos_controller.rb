@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
-  before_action :authenticate_user!, only: [:restricted]
+  before_action :set_todo, only: %i[show]
+  before_action :authenticate_user! 
   # this is to ensure that only a user can see this stuff 
 
   # def restricted
@@ -12,18 +13,23 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
-  def new
+  def show 
+  end 
 
+  def new
+      @todo = Todo.new
   end
 
   def create
-
-
-
+    todo = current_user.todos.new(title: params[:todo][:title], body: params[:todo][:body], completed: params[:todo][:completed])
+    todo.save 
+    redirect_to todos_path
   end
 
-  def show
-    
+  private
+
+  def set_todo
+    @todo = Todo.find(params[:id])
   end
 
  

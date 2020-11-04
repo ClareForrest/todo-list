@@ -1,12 +1,21 @@
 <h1> Show page </h1>
 
+<%= render "shared/navbar" %>
+<h1> Show page </h1> 
 
+  <div>
+    <h3>Id: <%= @todo.id %></h3>
+    <h3>Title: <%= @todo.title %></h3>
+    <h3>Description: <%= @todo.body %></h3>
+    <h3>completed: <%= @todo.completed %></h3>
+  </div>
 
-
-
-
-
-
+<div>
+  <%= link_to "Back", todos_path %>
+</div>
+  <div>
+  <%= link_to "New Todo", new_todo_path%>
+</div>
 
 <%= link_to 'edit', edit_todo_path %>
 <%= link_to 'delete', todo_path, :method => :delete %>
