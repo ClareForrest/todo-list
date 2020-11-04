@@ -9,12 +9,33 @@ class TodosController < ApplicationController
   end
   
   def index
+    @todos = Todo.all
   end
 
   def new
+
   end
 
   def create
+
+
+
   end
 
+  def show
+    
+  end
+
+ 
+
+
+
+  def edit
+    @todo = Todo.find(params[:id])
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+  end
 end
