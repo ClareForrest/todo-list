@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[show destroy update]
-  before_action :authenticate_user! 
-  # this is to ensure that only a user can see this stuff 
+  before_action :set_todo, only: %i[show edit destroy update]
+  before_action :authenticate_user!
+  # this is to ensure that only a user can see this stuff
 
   # def restricted
   # end
@@ -17,7 +17,7 @@ class TodosController < ApplicationController
   end 
 
   def new
-      @todo = Todo.new
+    @todo = Todo.new
   end
 
   def create
@@ -27,6 +27,11 @@ class TodosController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @todo.update(title: params[:todo][:title], body: params[:todo][:body], completed: params[:todo][:completed])
+    redirect_to todos_path
   end
 
   def destroy
@@ -40,6 +45,5 @@ class TodosController < ApplicationController
   def set_todo
     @todo = Todo.find(params[:id])
   end
-
 
 end

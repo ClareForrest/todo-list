@@ -1,6 +1,14 @@
 <h1>Editing post</h1>
  
-<%= render 'form', :todo => @todo %>
+<%= form_with model: @todo, local: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area :title %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.label :completed %>
+  <%= f.text_area :completed %>
+  <%= f.submit %>
+<% end %>
  
 <%= link_to 'Show', todo_path %>
 <%= link_to 'Back', todos_path %>
