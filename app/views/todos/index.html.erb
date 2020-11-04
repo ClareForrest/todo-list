@@ -1,3 +1,4 @@
+<%= render "shared/navbar" %>
 <h1> Todo List! </h1>
 <% @todos.each do |todo| %>
     <%= link_to todo_path(todo.id), class: "todo" do %>
@@ -5,4 +6,13 @@
       <p>Description: <%= todo.body %></p>
       <p>Completed: <%= todo.completed %></p>
     <% end %>
-  <% end %>
+  <% end %> 
+  <div>
+  <%= link_to "View Todo", todo_path %>
+  </div>
+  <div>
+  <%= link_to "New Todo", todo_path(@todo.id) %>
+  </div>
+    <div>
+  <%= link_to "View All Todos", todos_path %>
+  </div>
