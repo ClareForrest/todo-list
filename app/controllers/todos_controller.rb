@@ -10,7 +10,7 @@ class TodosController < ApplicationController
   end
   
   def index
-    @todos = Todo.all
+    @todos = current_user.todos
   end
 
   def show 
